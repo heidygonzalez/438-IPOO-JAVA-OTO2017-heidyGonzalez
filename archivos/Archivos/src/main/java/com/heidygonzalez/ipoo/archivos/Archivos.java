@@ -103,10 +103,32 @@ public class Archivos {
 		
 		
 	}
-
+	
 	
 	public void testObjeto(){
 		
+		Persona p=new Persona(1, "Heidy Gonzalez", "9999");
+		ObjectMapper mapper=new ObjectMapper();
+		String json;
+		
+		try{
+			json = mapper.writeValueAsString(p);
+			escribirArchivo("C:\\438-IPOO-JAVA-OTO2017\\archivos\\persona.txt", json);
+		}catch (JsonProcessingException e1){
+			e1.printStrackTrace();
+		}
+		
+		System.out.println(leer Archivo ("438-IPOO-JAVA-OTO2017\\archivos\\persona.txt"));
 	}
+	
+	
+	public static void main (String[] args){
+		
+		Archivos a=new Archivos();
+		
+		a.testObjeto();
+	}
+
+
 	
 }
